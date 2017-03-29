@@ -7,4 +7,5 @@
 - name: Install NLTK Data
   shell: "python -m nltk.downloader -d {{ NLTK_DATA_DIR }} {{ item }}"
   with_items: "{{ NLTK_DATA_PACKAGE_IDS }}"
-  creates: "{{ NLTK_DATA_DIR }}"
+  args:
+    creates: "{{ NLTK_DATA_DIR }}"
