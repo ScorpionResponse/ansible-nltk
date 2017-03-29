@@ -14,6 +14,7 @@ Role Variables
 --------------
 
 * NLTK_DATA_DIR: '/usr/share/nltk_data'
+* NLTK_DATA_PACKAGE_IDS: ['punkt', 'stopwords']
 
 Dependencies
 ------------
