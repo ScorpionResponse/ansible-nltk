@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Paul Moss (scorpionresponse)
+  description: Install NLTK and NLTK data
+  license: BSD
+  min_ansible_version: 1.9
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name: Debian
+    versions:
+    - jessie
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+    - xenial
+    - yakkety
+
+  galaxy_tags:
+    - development
+
+dependencies:
+  - ScorpionResponse.pip
