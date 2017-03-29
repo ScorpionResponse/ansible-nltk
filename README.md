@@ -3,7 +3,7 @@ Ansible Role: NLTK
 
 [![Build Status](https://travis-ci.org/ScorpionResponse/ansible-nltk.svg?branch=master)](https://travis-ci.org/ScorpionResponse/ansible-nltk)
 
-Simplest possible role to install NLTK and all data.
+Simplest possible role to install NLTK and data as specified
 
 Requirements
 ------------
