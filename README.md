@@ -13,8 +13,11 @@ None.
 Role Variables
 --------------
 
-* NLTK_DATA_DIR: '/usr/share/nltk_data'
-* NLTK_DATA_PACKAGE_IDS: ['punkt', 'stopwords']
+* NLTK_DATA_DIR: Set the installation directory for the shared data.
+  Default: '/usr/share/nltk_data'
+* NLTK_DATA_PACKAGE_IDS: The data packages to download.  Use 'all' to get
+  everything.
+  Default: ['punkt', 'stopwords']
 
 Dependencies
 ------------
