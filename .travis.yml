@@ -1,4 +1,5 @@
 ---
+language: python
 sudo: required
 
 env:
@@ -49,11 +50,11 @@ script:
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --syntax-check'
 
   # Test the role
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml'
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --extra-vars "use_python3=${use_python3}"'
     
   # Test role idempotence.
   - idempotence=$(mktemp)
-  - 'sudo docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml | tee -a ${idempotence}'
+  - 'sudo docker exec "$(cat ${container_id})" ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --extra-vars "use_python3=${use_python3}" | tee -a ${idempotence}'
   - >
     tail ${idempotence}
     | grep -q 'changed=0.*failed=0'
