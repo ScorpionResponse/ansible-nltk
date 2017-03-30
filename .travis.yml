@@ -62,7 +62,8 @@ script:
     || (echo 'Idempotence test: fail' && exit 1)
 
   # Test results of role
-  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm python -c "import nltk"'
+  - EXE=$([ "${use_python3}" = "True" ] && echo "python3" || echo "python2")
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ${EXE} -c "import nltk"'
 
 after_success:
   # Clean up.
