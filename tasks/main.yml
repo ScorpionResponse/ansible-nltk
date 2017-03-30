@@ -3,9 +3,10 @@
   pip:
     name: nltk
     state: present
+    executable: "{{ pip_executable }}"
 
 - name: Install NLTK Data
-  shell: "python -m nltk.downloader -d {{ NLTK_DATA_DIR }} {{ item }}"
+  shell: "{{ python_executable }} -m nltk.downloader -d {{ NLTK_DATA_DIR }} {{ item }}"
   with_items: "{{ NLTK_DATA_PACKAGE_IDS }}"
   args:
     creates: "{{ NLTK_DATA_DIR }}"
