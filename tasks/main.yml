@@ -1,4 +1,8 @@
 ---
+- name: Show use_python3 and pip_executable
+  debug:
+    msg: "Use Python3: {{ use_python3 }}; Pip Exe: {{ pip_executable }}"
+
 - name: Install NLTK
   pip:
     name: nltk
